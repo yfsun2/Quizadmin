@@ -135,7 +135,7 @@ public class AdminActivity extends AppCompatActivity {
                     etServerIp.setEnabled(false);
                     etServerPort.setEnabled(false);
                     etAdminName.setEnabled(false);
-                    Toast.makeText(AdminActivity.this, "连接成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminActivity.this, "与服务器连接成功", Toast.LENGTH_SHORT).show();
                 });
 
                 // 开始监听服务器消息
@@ -258,6 +258,12 @@ public class AdminActivity extends AppCompatActivity {
                     handler.post(() -> {
                         tvWinner.setText("抢答成功者: " + answerPlayer +"，用时:"+costTime+"ms");
                         btnEndQuiz.setEnabled(true);
+                    });
+                    break;
+                case "error":
+                    String message1 = json.getString("message");
+                    handler.post(() -> {
+                        Toast.makeText(AdminActivity.this, message1, Toast.LENGTH_SHORT).show();
                     });
                     break;
             }
