@@ -135,7 +135,7 @@ public class AdminActivity extends AppCompatActivity {
                     etServerIp.setEnabled(false);
                     etServerPort.setEnabled(false);
                     etAdminName.setEnabled(false);
-                    Toast.makeText(AdminActivity.this, "与服务器连接成功", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(AdminActivity.this, "与服务器连接成功", Toast.LENGTH_SHORT).show();
                 });
 
                 // 开始监听服务器消息
